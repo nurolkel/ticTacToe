@@ -1,0 +1,295 @@
+:root {
+    --royalBlue: #0504AA;
+    --deepBlue: #3906C2;
+    --vibrantBlue: #020278;
+    --navyBlue: #0B0B45;
+    --lightBlue: #4F4FF7;
+    --purple: #6706B8;
+    --white: #fff;
+    --green: #37AB15;
+    --yellow: #E8F71E;
+    --yellowTint: rgba(232,247,30);
+    --orange: #F7A41E;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 2fr;
+   
+}
+
+body .sidebar {
+    display: grid;
+    grid-template-rows: repeat(3, minmax(250px, 1fr));
+    gap: 2.5rem;
+    box-sizing: border-box;
+    background-color: var(--navyBlue);
+    position: relative;
+    z-index: 10;
+    box-shadow: 3px 3px 2px var(--navyBlue);
+}
+
+.sidebar .sidebar-heading {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+
+.sidebar-heading h1 {
+    padding: 1rem;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.sidebar-heading p {
+    padding: 1rem;
+    color: var(--white);
+}
+
+.sidebar form {
+    padding: 1rem;
+}
+
+.sidebar form label {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+form input {
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--deepBlue);
+    position: relative;
+    padding: 1rem 2rem;
+    z-index: 10;
+    box-shadow: 1px 1px 2px var(--purple);
+    font-size: 1rem;
+    color: var(--navyBlue);
+}
+
+form input:focus {
+    outline-color: var(--deepBlue);
+}
+
+form button.submitBtn {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--deepBlue);
+    box-shadow: 1px 1px 1px var(--deepBlue);
+    background-color: var(--vibrantBlue);
+    color: var(--white);
+    transition: background-color 0.5s;
+}
+
+form button.submitBtn:hover {
+    background-color: var(--green);
+}
+
+.sidebar .btn-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-container button {
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    font-size: 1rem;
+    position: relative;
+    z-index: 10;
+    transition: background-color 0.5s;
+}
+
+.startGame {
+    background-color: var(--royalBlue);
+    color: var(--white);
+    border: 1px solid var(--royalBlue);
+    box-shadow: 1px 1px 1px var(--deepBlue);
+}
+
+.startGame:hover {
+    background-color: var(--green);
+}
+
+.restartGame {
+    background-color: var(--lightBlue);
+    color: var(--white);
+    border: 1px solid var(--lightBlue);
+    box-shadow: 1px 1px 1px var(--deepBlue);
+}
+
+.restartGame:hover {
+    background-color: var(--yellow);
+}
+
+.newGame {
+    background-color: transparent;
+    color: var(--white);
+    border: 3px solid var(--royalBlue);
+    box-shadow: 1px 1px 1px var(--deepBlue);
+}
+
+.newGame:hover {
+    background-color: var(--orange);
+}
+
+
+body .second-column {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+}
+
+.second-column .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--navyBlue);
+    position: relative;
+    z-index: 10;
+    box-shadow: 3px 3px 2px var(--navyBlue);
+}
+
+.second-column .header div {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 1rem;
+}
+
+.second-column .header div h3,
+.second-column .header div p {
+    color: var(--white);
+}
+
+.second-column .content {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.second-column .content .board {
+	height: 350px;
+    width: 350px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.second-column .content .board .row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 350px;
+}
+
+.second-column .content .board .row div {
+    height: auto;
+    width: 100%;
+    
+}
+
+.second-column .content .board .row:first-child div{
+	border-top: 0;
+    border-bottom: 2px solid var(--royalBlue);
+    border-right: 2px solid var(--royalBlue);
+}
+
+.second-column .content .board .row:last-child div {
+	border-bottom: 0;
+    border-top: 2px solid var(--royalBlue);
+    border-left: 2px solid var(--royalBlue);
+}
+
+.second-column .content .board .row:nth-child(2) div:nth-child(2) {
+    border-left: 2px solid var(--royalBlue);
+    border-right: 2px solid var(--royalBlue);
+}
+
+.second-column .content .board .row div:first-child {
+	border-left: 0;
+}
+
+.second-column .content .board .row div:last-child {
+	border-right: 0;
+}
+
+.second-column .modal-outer {
+    display: none;
+    position: absolute;
+    height: 735px;
+    width: 100%;
+    background-color: var(--yellow);
+    transition: all 0.5s;
+}
+
+.row .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.row .cell.win {
+    background-color: var(--green);
+}
+
+.row .cell.tie {
+    background-color: var(--purple);
+}
+
+.modal-outer.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-outer .modal-inner {
+    height: 200px;
+    width: 300px;
+    border: 1px solid var(--deepBlue);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 1rem;
+    
+}
+
+.modal-inner .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.modal-inner .close-modal-btn {
+    width: 100px;
+    height: 55px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px var(--deepBlue);
+    background-color: var(--royalBlue);
+    color: var(--white);
+    border: 1px solid var(--deepBlue);
+    margin: 0 auto;
+    margin-top: 10px;
+    transition: background-color 0.5s;
+}
+
+.modal-inner .close-modal-btn:hover {
+    background-color: var(--vibrantBlue);
+}
+
