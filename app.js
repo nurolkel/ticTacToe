@@ -87,7 +87,7 @@ function displayPlayer(player) {
 
 function playGame() {
     removeClasses();
-
+    
     if (!playersHeader.dataset.playerOne && !playersHeader.dataset.playerTwo) {
         const message = "First Enter Players to play!"
         openModal(message);
